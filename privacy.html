@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nport Privacy Policy</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<h1>nport Privacy Policy</h1>
+<p class="meta"><strong>App:</strong> nport (<code>com.nport</code>) &middot; <strong>Developer:</strong> [DEVELOPER NAME] &middot; <strong>Last updated:</strong> 2026-10-22</p>
+
+<p>nport is a network toolkit and port scanner. It runs on your device, has no accounts, shows no ads and has no server of ours. This page explains what leaves your device.</p>
+
+<h2>What stays on your device</h2>
+<p>Scan targets and ranges, host names, open ports, banners, discovered devices, MAC addresses and vendors, traceroute, DNS and whois results, scan history, saved MAC addresses, settings and exports are produced on your device and stored only there (in a local database and in files you export). We cannot see them. Scan history is not included in Android cloud backup or device transfer. Exports go through the share sheet only when you tap export. Uninstalling the app deletes local data.</p>
+
+<h2>Crash reports and usage statistics (Firebase)</h2>
+<p>nport uses Google Firebase Crashlytics and Firebase Analytics, <strong>only if you agree</strong>. Firebase acts as our service provider and processes this data on our behalf; we do not sell it or use it for advertising.</p>
+<!-- OPEN: "Shared" in the Data safety form: sheet proposes Shared = No (Firebase as service provider); conservative alternative is Shared = Yes (analytics). Owner to choose; wording above must match. -->
+<p>Reporting is off on a fresh install and nothing is sent before you choose. On first launch nport shows a dialog, <em>Help improve nport?</em>, with Share and No thanks. You can change your answer at any time in <strong>Settings &gt; Privacy</strong>; collection stops when you switch it off. It is never active in debug builds. If your phone restores the app's settings from a backup or transfer, your earlier answer is restored with them.</p>
+<table>
+<tr><th>Data</th><th>Purpose</th></tr>
+<tr><td>Crash reports: stack traces and error class names for crashes and handled errors (scan, history, export, traceroute, DNS lookup, neighbour-table and MAC-vendor loading), the screen name, and recent steps such as which tool you used</td><td>Fix crashes</td></tr>
+<tr><td>Device conditions attached to reports: build type, whether installed from Google Play or sideloaded, language, low-memory and battery-saver flags, network type (Wi-Fi, mobile, VPN or other; never the network name), whether a VPN is active, whether IPv6 is available</td><td>Debug problems</td></tr>
+<tr><td>Usage events: <code>tool_used</code> (which tool: port scan, network scan, discover, DNS, traceroute, whois or IPv6), <code>scan_finished</code> (host or network scan, with ranges for target count, port count and duration, and whether it completed), <code>scan_error</code> (timeout, permission, no network, VPN or other), <code>layout</code> (phone or tablet), <code>history_opened</code>, <code>export_used</code>, plus events Firebase records itself (first open, session start, app update)</td><td>Know which tools are used</td></tr>
+<tr><td>Identifiers and device details Firebase creates or reads: a random app-instance ID and Crashlytics installation ID, phone model and Android version. This is not your advertising ID.</td><td>Group crashes, count installs</td></tr>
+</table>
+<p>The app does not send the addresses, ranges or host names you scan, discovered devices, MAC addresses or vendors, ports found, banners, Wi-Fi names (SSIDs) or file names to Firebase. It reads only the type of network connection.</p>
+<p><strong>Limit:</strong> handled errors carry no exception message, but if the app crashes with an unexpected error, the error text produced by Android or a library is sent as it is and is not filtered. Network errors from Java can include the address of the peer, so in rare cases such text could include an address you were scanning.</p>
+<!-- OPEN: Uncaught crash text is not redacted; nport has no CrashRedactor (sheet open point 2). Owner may wrap the default handler in a later build; keep this limit paragraph until then. -->
+<p>Google also derives an approximate country or region from your IP address when Analytics data arrives. The app never reads your location and has no location permission.</p>
+<!-- OPEN: Approximate location via Analytics IP (sheet open point 4): currently not declared in the Data safety form; align form and this sentence if Firebase's Play disclosure guidance lists it. -->
+<p>Data is encrypted in transit. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+<h2>Network requests the app makes</h2>
+<ul>
+<li><strong>Scans you start:</strong> traffic goes directly from your phone to the targets you typed or discovered. It does not pass through any server of ours. Scan only networks you are permitted to test.</li>
+<li><strong>Public IP lookup:</strong> <code>api.ipify.org</code>, to show your public IP. It receives your IP address like any web request.</li>
+<li><strong>DNS tool:</strong> <code>dns.google</code> (Google Public DNS), which receives the domain you typed.</li>
+<li><strong>Whois tool:</strong> <code>rdap.org</code>, which receives the domain, public IP or AS number you typed. Private and local addresses are not sent.</li>
+</ul>
+<!-- OPEN: Stance that these user-initiated third-party lookups (ipify, dns.google, rdap.org) are not declared as developer collection or sharing is unconfirmed (sheet section 2); owner to confirm. They are disclosed here either way. -->
+<p>These services handle the query under their own privacy policies and are contacted only when you use the related tool. We do not receive this traffic.</p>
+
+<h2>What we do not collect</h2>
+<p>Your advertising ID, location, contacts, files, scan targets or results, MAC addresses, Wi-Fi names, account or personal information.</p>
+
+<h2>Permissions</h2>
+<p>Internet (scans, lookups, Firebase); network state (detect the active network, VPN or mobile data, and warn before scanning on mobile data); Wi-Fi state (declared by the app); notifications (scan progress; scanning works if you decline); foreground service of type data sync (a scan you start keeps running in the background; Android may stop such a service after about 6 hours in a day, and nport then saves what it found and stops). No location, Bluetooth, nearby-devices, contacts, camera, microphone or storage access.</p>
+
+<h2>Your choices and deletion</h2>
+<p>Choose Share or No thanks on first launch, and change it any time in Settings &gt; Privacy. Because there are no accounts, Firebase data is tied only to a random app-instance ID. To ask us to delete data tied to your installation, email us the request and, if you can, that ID, and we will delete what we can match. Clearing app data or reinstalling resets the ID.</p>
+<!-- OPEN: Deletion request offered "by email" is the sheet's proposal (Data safety: "Proposed: Yes"), not yet confirmed by the owner (sheet open point 8). Policy and form must say the same. -->
+
+<h2>Children</h2>
+<p>nport is not directed at children.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the date above changes and the new version replaces this page.</p>
+
+<h2>Contact</h2>
+<p>sgateori@proton.me</p>
+</body>
+</html>
